@@ -1,0 +1,290 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Regular.eot");
+  src: url("fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/OpenSans-Regular.woff2") format("woff2"), url("fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Medium.eot");
+  src: url("fonts/OpenSans-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/OpenSans-Medium.woff2") format("woff2"), url("fonts/OpenSans-Medium.woff") format("woff"), url("fonts/OpenSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Bold.eot");
+  src: url("fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/OpenSans-Bold.woff2") format("woff2"), url("fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("fonts/PlayfairDisplay-Regular.eot");
+  src: url("fonts/PlayfairDisplay-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("fonts/PlayfairDisplay-Regular.woff") format("woff"), url("fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Open Sans", sans-serif;
+  color: #2a2a2a;
+  padding: 0;
+  margin: 0;
+}
+body p,
+html p {
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: -0.5px;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+}
+body h1,
+html h1 {
+  font-size: 34px;
+}
+body h2,
+html h2 {
+  font-size: 30px;
+}
+body h3,
+html h3 {
+  font-size: 24px;
+}
+
+.content {
+  max-width: 1200px;
+  padding: 25px;
+  margin: 20px auto;
+}
+
+.featured-image {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+.featured-image img {
+  width: 100%;
+  display: block;
+}
+
+.entry {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 810px) {
+  body h1,
+  html h1 {
+    font-size: 26px;
+  }
+  body h2,
+  html h2 {
+    font-size: 24px;
+  }
+  body h3,
+  html h3 {
+    font-size: 22px;
+  }
+
+  .content {
+    margin: 0 auto;
+  }
+
+  .featured-image {
+    padding: 4px;
+  }
+
+  .entry {
+    padding: 0;
+  }
+}
+header {
+  width: 100%;
+}
+header .topbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+}
+header .topbar a {
+  color: #2a2a2a;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  font-size: 38px;
+  letter-spacing: -2px;
+}
+header .navigation {
+  width: 100%;
+  background-color: #2a2a2a;
+}
+header .navigation .nav-list {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header .navigation .nav-list a {
+  display: inline-block;
+  color: #fff;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+  font-size: 18px;
+}
+header .navigation .nav-list a:hover {
+  background-color: #444;
+}
+header .navigation i.fa-bars {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  header {
+    width: 100%;
+  }
+  header .topbar {
+    text-align: center;
+  }
+  header .topbar a {
+    font-size: 28px;
+  }
+  header .navigation .nav-list {
+    display: none;
+  }
+  header .navigation .nav-list a {
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid #333;
+  }
+  header .navigation .nav-list a:last-child {
+    border-bottom: none;
+  }
+  header .navigation .show-nav {
+    display: block;
+  }
+  header .navigation i.fa-bars {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 25px;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 810px) {
+  header .topbar {
+    padding: 14px 25px;
+  }
+}
+.blog-list {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 25px;
+}
+.blog-list .article-block {
+  display: flex;
+  display: -webkit-flex;
+  display: -o-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 1px 0px 5px 1px rgba(222, 222, 222, 0.68);
+  -webkit-box-shadow: 1px 0px 5px 1px rgba(222, 222, 222, 0.68);
+  -moz-box-shadow: 1px 0px 5px 1px rgba(222, 222, 222, 0.68);
+}
+.blog-list .article-block .img-col {
+  width: 35%;
+}
+.blog-list .article-block .img-col img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.blog-list .article-block .txt-col {
+  width: 65%;
+  padding: 25px;
+}
+.blog-list .article-block .txt-col h3,
+.blog-list .article-block .txt-col a {
+  cursor: pointer;
+}
+.blog-list .article-block .txt-col h3 {
+  margin-top: 0;
+}
+.blog-list .article-block .txt-col p {
+  font-size: 17px;
+}
+.blog-list .article-block .txt-col a {
+  margin-top: 10px;
+  display: inline-block;
+  border: 1px solid #00486f;
+  padding: 8px 15px;
+  font-size: 16px;
+  color: #2a2a2a;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 810px) {
+  .blog-list {
+    margin: 0 auto;
+  }
+  .blog-list .article-block {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -o-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+  }
+  .blog-list .article-block .img-col {
+    width: 100%;
+  }
+  .blog-list .article-block .txt-col {
+    width: 100%;
+    padding: 15px;
+  }
+}
+footer {
+  background-color: #2a2a2a;
+  text-align: center;
+  padding: 20px 25px;
+}
+footer p,
+footer a {
+  margin: 0;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 810px) {
+  footer {
+    padding: 10px 25px;
+  }
+}

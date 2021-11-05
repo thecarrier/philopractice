@@ -1,0 +1,54 @@
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Regular.eot");
+  src: url("fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("fonts/OpenSans-Regular.woff") format("woff"),
+    url("fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Medium.eot");
+    src: url("fonts/OpenSans-Medium.eot?#iefix") format("embedded-opentype"),
+      url("fonts/OpenSans-Medium.woff2") format("woff2"),
+      url("fonts/OpenSans-Medium.woff") format("woff"),
+      url("fonts/OpenSans-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-Bold.eot");
+  src: url("fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/OpenSans-Bold.woff2") format("woff2"),
+    url("fonts/OpenSans-Bold.woff") format("woff"),
+    url("fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("fonts/PlayfairDisplay-Regular.eot");
+  src: url("fonts/PlayfairDisplay-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("fonts/PlayfairDisplay-Regular.woff2") format("woff2"),
+    url("fonts/PlayfairDisplay-Regular.woff") format("woff"),
+    url("fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+$opensans: "Open Sans", sans-serif;
+$playfairdisplay: "Playfair Display", serif;

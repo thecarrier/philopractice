@@ -1,0 +1,99 @@
+header {
+  width: 100%;
+
+  .topbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+
+    a {
+      color: #2a2a2a;
+      text-decoration: none;
+      font-family: $opensans;
+      font-weight: bold;
+      font-size: 38px;
+      letter-spacing: -2px;
+    }
+  }
+
+  .navigation {
+    width: 100%;
+    background-color: #2a2a2a;
+
+    .nav-list {
+      max-width: 1200px;
+      margin: 0 auto;
+
+      a {
+        display: inline-block;
+        color: #fff;
+        padding: 15px 25px;
+        text-decoration: none;
+        font-family: $playfairdisplay;
+        font-weight: normal;
+        font-size: 18px;
+      }
+
+      a:hover {
+        background-color: #444;
+      }
+    }
+
+    i.fa-bars {
+      display: none;
+    }
+  }
+}
+
+@include laptop-s {
+  header {
+    width: 100%;
+
+    .topbar {
+      //padding: 10px 25px;
+      text-align: center;
+
+      a {
+        font-size: 28px;
+      }
+    }
+
+    .navigation {
+      .nav-list {
+        //width: 1200px;
+        display: none;
+
+        a {
+          display: block;
+          //padding: 15px 25px;
+          font-size: 16px;
+          border-bottom: 1px solid #333;
+        }
+
+        a:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .show-nav {
+        display: block;
+      }
+
+      i.fa-bars {
+        display: block;
+        color: #fff;
+        font-size: 20px;
+        padding: 15px 25px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@include tablet {
+  header {
+    .topbar {
+      padding: 14px 25px;
+    }
+  }
+}
