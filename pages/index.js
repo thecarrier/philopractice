@@ -10,14 +10,15 @@ const blogListQuery = `*[_type == 'post'] | order(publishedAt desc) {
   mainImage,
   excerpt,
   publishedAt,
-  categories
+  "categories": categories[]->title
 }`;
 
+/*
 const blogCategoryQuery = `*[_type == 'category'] {
   _id,
   title
 }`;
-
+*/
 /*
 const mainNavigation = `*[_type == "siteConfig"]{
   mainNav[]->{ 
@@ -28,7 +29,7 @@ const mainNavigation = `*[_type == "siteConfig"]{
 }`;
 */
 
-export default function Home({ posts, category }) {
+export default function Home({ posts }) {
   return (
     
     <div>
@@ -63,8 +64,13 @@ export default function Home({ posts, category }) {
 
 export async function getStaticProps() {
   const posts = await sanityClient.fetch(blogListQuery);
-  const category = await sanityClient.fetch(blogCategoryQuery);
+  //const category = await sanityClient.fetch(blogCategoryQuery);
   //const navigation = await sanityClient.fetch(mainNavigation);
-  return { props: { posts, category } };
+  return { 
+    props: { 
+      posts
+    },
+    revalidate: 10,
+  };
   //return { props: { category } };
 }
