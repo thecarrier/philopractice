@@ -3,22 +3,17 @@ import Head from "next/head";
 import Link from "next/link";
 import { sanityClient, urlFor, PortableText } from "../lib/sanity";
 
-const blogListQuery = `*[_type == 'category'] {
+const blogListQuery = `*[_type == 'post'] | order(publishedAt desc) {
   _id,
-  title
+  title,
+  slug,
+  mainImage,
+  excerpt,
+  publishedAt,
+  "categories": categories[]->title
 }`;
 
-/*
-const mainNavigation = `*[_type == "siteConfig"]{
-  mainNav[]->{ 
-    _id,
-    slug,
-		title
-  }
-}`;
-*/
-
-export default function Home({ category }) {
+export default function Home({ posts }) {
   return (
     
     <div>
@@ -28,17 +23,38 @@ export default function Home({ category }) {
       </Head>
 
       <div className="blog-list">
+        {posts?.length > 0 &&
+          posts.map((post) => (
+            <Link href={`/blog/${post.slug.current}`} key={post._id}>
+              <div className="article-block">
+                <div className="img-col">
+                  <img src={urlFor(post.mainImage).url()} />
+                </div>
 
-      <h3>{category.title}</h3>
-         
+                <div className="txt-col">
+                  <h3>{post.title}</h3>
+                  <span className="list-cat-title"><i className="fas fa-book-open"></i> {post.categories}</span>
+                  <PortableText blocks={post.excerpt} />
+                  <Link href={`/blog/${post.slug.current}`}>
+                    <a>Pročitaj više</a>
+                  </Link>
+                  {/*new Date(post.publishedAt).toDateString()*/}
+                </div>
+              </div>
+            </Link>
+          ))}
       </div>
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const category = await sanityClient.fetch(blogListQuery);
-  //const navigation = await sanityClient.fetch(mainNavigation);
-  return { props: { category } };
-  //return { props: { category } };
-}
+  const posts = await sanityClient.fetch(blogListQuery);
+
+  return { 
+    props: { 
+      posts
+    },
+    revalidate: 10,
+  };
+};

@@ -33,7 +33,7 @@ export default function Home({ posts }) {
 
                 <div className="txt-col">
                   <h3>{post.title}</h3>
-                  <span className="list-cat-title"><i class="fas fa-book-open"></i> {post.categories}</span>
+                  <span className="list-cat-title"><i className="fas fa-book-open"></i> {post.categories}</span>
                   <PortableText blocks={post.excerpt} />
                   <Link href={`/blog/${post.slug.current}`}>
                     <a>Pročitaj više</a>
