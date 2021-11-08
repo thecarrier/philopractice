@@ -13,22 +13,6 @@ const blogListQuery = `*[_type == 'post'] | order(publishedAt desc) {
   "categories": categories[]->title
 }`;
 
-/*
-const blogCategoryQuery = `*[_type == 'category'] {
-  _id,
-  title
-}`;
-*/
-/*
-const mainNavigation = `*[_type == "siteConfig"]{
-  mainNav[]->{ 
-    _id,
-    slug,
-		title
-  }
-}`;
-*/
-
 export default function Home({ posts }) {
   return (
     
@@ -49,10 +33,12 @@ export default function Home({ posts }) {
 
                 <div className="txt-col">
                   <h3>{post.title}</h3>
+                  <span className="list-cat-title"><i class="fas fa-book-open"></i> {post.categories}</span>
                   <PortableText blocks={post.excerpt} />
                   <Link href={`/blog/${post.slug.current}`}>
                     <a>Pročitaj više</a>
                   </Link>
+                  {/*new Date(post.publishedAt).toDateString()*/}
                 </div>
               </div>
             </Link>
@@ -64,13 +50,11 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const posts = await sanityClient.fetch(blogListQuery);
-  //const category = await sanityClient.fetch(blogCategoryQuery);
-  //const navigation = await sanityClient.fetch(mainNavigation);
+
   return { 
     props: { 
       posts
     },
     revalidate: 10,
   };
-  //return { props: { category } };
-}
+};
