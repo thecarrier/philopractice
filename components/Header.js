@@ -5,7 +5,7 @@ const siteHeader = () => {
     <header>
       <div className="topbar">
         <Link href="/">
-          <a>Zoran Kojčić</a>
+          <a>PhiloPractice</a>
         </Link>
       </div>
 
@@ -26,6 +26,10 @@ const siteHeader = () => {
 
           <Link href="/radionice">
             <a>Radionice</a>
+          </Link>
+
+          <Link href="/biografija">
+            <a>Biografija</a>
           </Link>
 
           <Link href="/kontakt">
