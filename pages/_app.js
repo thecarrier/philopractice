@@ -9,10 +9,19 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     let btn = document.querySelector(".fa-bars");
     let nav = document.querySelector(".nav-list");
+    let navWrap = document.querySelector(".navigation");
 
     btn.addEventListener("click", toggleFunction);
     function toggleFunction() {
       nav.classList.toggle("show-nav");
+    }
+
+    nav.addEventListener("click", outsideClose);
+    function outsideClose(event) {
+      if (event.target === navWrap) {
+      } else {
+        nav.classList.remove("show-nav");
+      }
     }
   }, []);
 
