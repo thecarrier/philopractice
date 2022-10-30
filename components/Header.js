@@ -28,6 +28,10 @@ const siteHeader = () => {
             <a>Radionice</a>
           </Link>
 
+          <Link href="/publikacije">
+            <a>Publikacije</a>
+          </Link>
+
           <Link href="/biografija">
             <a>Biografija</a>
           </Link>
